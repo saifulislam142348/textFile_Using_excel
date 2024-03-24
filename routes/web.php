@@ -17,3 +17,4 @@ use App\Http\Controllers\ClintInfoController;
 
  Route::get('/',[ClintInfoController::class,'index']);
  Route::post('/store',[ClintInfoController::class,'openTxtFile']);
+ Route::post('/store_data',[ClintInfoController::class,'store']);

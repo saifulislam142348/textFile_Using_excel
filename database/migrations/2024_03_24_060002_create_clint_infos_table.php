@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('clint_infos', function (Blueprint $table) {
             $table->id();
+            $table->string('application_date')->nullable();
+            $table->string('Expiration_date')->nullable();
             $table->string('name')->nullable();
+            $table->string('relative_name')->nullable();
+            $table->string('birth_day')->nullable();
             $table->string('phone')->nullable();
             $table->string('nid')->nullable();
             $table->string('passport')->nullable();
             $table->string('address')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
