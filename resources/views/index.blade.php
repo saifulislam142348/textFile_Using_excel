@@ -26,47 +26,120 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         @if (isset($rows))
-        {{-- @dump($rows) --}}
-        <table class="table">
+            {{-- @dump($rows) --}}
+            <table class="table">
 
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Passport</th>
-                    <th>Address</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        @if (isset($rows['310']))
-                          {{ strip_tags($rows['310']) }}
-                        @endif
-                    </td>
-                    <td>
-                        @if (isset($rows['300']))
-                           {{ strip_tags($rows['300']) }}
-                        @endif
-                    </td>
-                    <td>
-                        @if (isset($rows['271']))
-                          {{ strip_tags($rows['271']) }}
-                        @endif
-                    </td>
-                    <td>
-                        @if (isset($rows['321']))
-                           {{ strip_tags($rows['321']) }}
-                        @endif
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        {{-- @dd($rows) --}}
+                <thead>
+                    <tr>
+                        <th>Date of Application</th>
+                        <th>Date of Expiration</th>
+                        <th>Name</th>
+                        <th>Relative Person</th>
+                        <th>Birth Date</th>
+                        <th>Phone</th>
+                        <th>Nid</th>
+                        <th>Passport</th>
+                        <th>Address</th>
+                        <th>Description of incident</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {{-- Date of Application --}}
+                            @if (isset($rows['276']))
 
 
+                                {{ strip_tags($rows['276']) }}
 
-        {{-- @foreach ($rows as $row)
+                            @endif
+                        </td>
+                         <td>
+                            {{-- Date of Expiration --}}
+                            @if (isset($rows['279']))
+
+
+                                {{ strip_tags($rows['279']) }}
+
+                            @endif
+                        </td>
+                        <td>
+                            {{-- name --}}
+                            @if (isset($rows['352']))
+                                {{ strip_tags($rows['352']) }}
+                            @endif
+                        </td><td>
+                            {{-- relative person --}}
+                            @if (isset($rows['310']))
+                                {{ strip_tags($rows['310']) }}
+                            @endif
+                        </td>
+                        <td>
+                            {{-- birth --}}
+                            @if (isset($rows['287']))
+                                {{ strip_tags($rows['287']) }}
+                            @endif
+                        </td>
+                        <td>
+                            {{-- phone --}}
+                            @if (isset($rows['300']))
+                                {{ strip_tags($rows['300']) }}
+                            @endif
+                        </td>
+                        <td>
+                            {{-- Nid --}}
+                            @if (isset($rows['297']))
+                                @php
+                                    $bengaliText = strip_tags($rows['297']);
+                                    $digitsMap = [
+                                        '০' => '0',
+                                        '১' => '1',
+                                        '২' => '2',
+                                        '৩' => '3',
+                                        '৪' => '4',
+                                        '৫' => '5',
+                                        '৬' => '6',
+                                        '৭' => '7',
+                                        '৮' => '8',
+                                        '৯' => '9',
+                                    ];
+                                    // Replace Bengali digits with English digits
+                                    $englishText = strtr($bengaliText, $digitsMap);
+                                    // Extract only digits using regular expression
+                                    preg_match_all('/\d/', $englishText, $matches);
+                                    $digits = implode('', $matches[0]);
+                                    // Output the English text
+                                @endphp
+                                {{ strip_tags($rows['297']) }} <br>
+                                {{ $digits }}
+                            @endif
+                        </td>
+                        <td>
+                            {{-- passport --}}
+                            @if (isset($rows['271']))
+                                {{ strip_tags($rows['271']) }}
+                            @endif
+                        </td>
+                        <td>
+                            {{-- address --}}
+                            @if (isset($rows['321']))
+                                {{ strip_tags($rows['321']) }}
+                            @endif
+                        </td>
+                         <td>
+                            {{-- Description --}}
+                            @if (isset($rows['331']))
+                                {{ strip_tags($rows['331']) }}
+                            @endif
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {{-- @dd($rows) --}}
+
+
+
+            {{-- @foreach ($rows as $row)
 
             @if (count($data) == 10)
                 @php
@@ -96,7 +169,7 @@
                 @endphp
             @endif
         @endforeach --}}
-    @endif
+        @endif
     </div>
 
 
