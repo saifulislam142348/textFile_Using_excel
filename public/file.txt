@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html>
+<head translate="no">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<title>Info</title>
+<!-- Custom fonts for this template-->
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+<link href="/css/fonts.css" rel="stylesheet">
+<link href="/css/sb-admin-2.min.css" rel="stylesheet"/>
+<link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet"/>
+<link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet"/>
+<style>
+        .print-card-body {
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .vartical-table th {
+            width: 20%;
+        }
+
+        .vartical-table td {
+            width: 30%;
+            padding-right: 15px;
+        }
+
+        .horizontal-table {
+            /*width: 100%;*/
+        }
+
+        .table td, .table th {
+            padding: .5rem;
+            font-size: 10px !important;
+        }
+
+        table {
+            page-break-inside: auto
+        }
+
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto
+        }
+
+        thead {
+            display: table-header-group
+        }
+
+        tfoot {
+            display: table-footer-group
+        }
+
+        h6 {
+            font-size: 14px;
+            background-color: white;
+            color: white !important;
+            padding: 3px;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid !important;
+        }
+
+        span {
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+        .watermark {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            font-size:80px!important;
+            font-weight:bold;
+            opacity:0.4;
+            color: red;
+            font-size: 18px;
+            pointer-events: none;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+        }
+    </style>
+<style>
+        body {
+            font-family: 'Nikosh' !important;
+            font-size: 11pt !important;
+        }
+
+        table .btn {
+            font-size: 8pt !important;
+            padding: 3px 5px 3px 5px !important;
+        }
+
+        table th, table td {
+            /*padding: 2px 2px 2px 2px !important;*/
+            color: black !important;
+        }
+
+        .col-form-label {
+            color: #606066 !important;
+            font-weight: bold;
+            padding: 0 0 0 0;
+        }
+
+        .form-control {
+            color: #606066 !important;
+            font-size: 10pt !important;
+            padding: 1px 4px 1px 8px;
+            border: 1px solid #606066;
+            height: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 6px !important;
+        }
+
+        .gj-datepicker-bootstrap [role=right-icon] button {
+            border: 1px solid #606066 !important;
+        }
+
+            .gj-datepicker-bootstrap [role=right-icon] button .gj-icon {
+                top: 5px !important;
+            }
+
+        .nav .nav-item {
+            background: #30994c !important;
+            border-radius: 3px !important;
+        }
+
+        /*Parsly  Section*/
+        input.parsley-success,
+        select.parsley-success,
+        textarea.parsley-success {
+            color: #468847;
+            background-color: #DFF0D8;
+            border: 1px solid #D6E9C6;
+        }
+
+        input.parsley-error,
+        select.parsley-error,
+        textarea.parsley-error {
+            color: #B94A48;
+            background-color: #F2DEDE;
+            border: 1px solid #EED3D7;
+        }
+
+        .parsley-errors-list {
+            margin: 2px 0 3px;
+            padding: 0;
+            list-style-type: none;
+            font-size: 0.9em;
+            line-height: 0.9em;
+            opacity: 0;
+            transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            -moz-transition: all .3s ease-in;
+            -webkit-transition: all .3s ease-in;
+        }
+
+            .parsley-errors-list.filled {
+                opacity: 1;
+            }
+
+        .parsley-type, .parsley-required, .parsley-equalto {
+            color: #ff0000;
+        }
+        /*Parsly  Section*/
+
+        .table-bordered {
+            border-collapse: collapse !important;
+        }
+
+            .table-bordered th {
+                border: 1px solid black;
+            }
+
+            .table-bordered td {
+                border: 1px solid black;
+            }
+
+        .table-bordered-grey {
+            border-collapse: collapse !important;
+        }
+
+            .table-bordered-grey th {
+                border: 1px solid gray;
+            }
+
+            .table-bordered-grey td {
+                border: 1px solid gray;
+            }
+    </style>
+</link></head>
+<body>
+<div>
+<div class="container mt-3">
+<div class="row">
+<div class="col-sm-11">
+</div>
+<div class="col-sm-1">
+<a class="btn btn-facebook" id="btnPrint" onclick="printDiv('reportPage')" style="float:right;color:white;cursor:pointer;" title="Print"><i class="fa fa-print"></i></a>
+</div>
+</div>
+</div>
+<div class="container" id="reportPage">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-md-10">
+<div style="text-align:center">
+<img height="100" src="/images/bd-police-logo.png" width="100"/>
+</div>
+<div style="text-align:right;margin-right:120px;">
+<img height="100" src="data:image/png;base64,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" width="100"/>
+</div>
+<div class="row">
+<div class="col-8" style="font-family:Kalpurush;font-size:20px;">
+<p style="margin-bottom:-5px;">বরাবর,</p>
+<p style="margin-bottom:-5px;">অফিসার ইনচার্জ</p>
+<p style="margin-bottom:-5px;">কাপাসিয়া থানা</p>
+<p style="margin-bottom:-5px;">গাজীপুর জেলা।</p>
+</div>
+<div class="col-4" style="font-family:Kalpurush;font-size:20px;font-weight:bold">
+<p style="font-size:20px;margin-bottom:-5px;">জিডি ট্র্যাকিং নং: Z637VH</p>
+<p style="font-size:20px;margin-bottom:-5px;">জিডি নং: ৮৪৬</p>
+<p style="font-size:20px;margin-bottom:-5px;">তারিখ: ১৮/১২/২০২৩</p>
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-12" style="font-family:Kalpurush;font-size:20px;">
+<span style="font-weight:bold;color:black;font-size:20px">বিষয় : সাধারণ ডায়েরী করার আবেদন প্রসঙ্গে।</span><br/><br/>
+<span style="color:black;font-size:20px">জনাব,</span><br/>
+<p style="font-size:20px; text-align:justify;margin-bottom:-2px;">
+                        আমি নিম্নস্বাক্ষরকারী <span>লোকমান</span> <span> (৩৭)</span>, পিতা: <span>সামসুল হক</span>, মাতা :<span> মোছাঃ মারজিয়া খাতুন</span>, জাতীয় পরিচয় পত্র নং :
+<span>৬৪৩৭৮৭৩৯৫০</span>                        ,ঠিকানা(স্থায়ী) -৬৮৭, ইউনিয়ন/ওয়ার্ড -রায়েদ, থানা -কাপাসিয়া, জেলা -গাজীপুর ও ঠিকানা(বর্তমান)-৬৮৭, গ্রাম-, ইউনিয়ন/ওয়ার্ড-রায়েদ, থানা-কাপাসিয়া, জেলা-গাজীপুর , মোবাইল নং -০১৭৩২৬১৭৯৪৫।
+                    </p><br/>
+<p style="font-size:20px; text-align:justify;margin-bottom:-2px;">
+                    এই মর্মে জানাচ্ছি যে, গত রোজ বৃহস্পতিবার, ২৮ সেপ্টেম্বর ২০২৩ খ্রিঃ বিকাল ৪:১৯ ঘটিকার সময়
+                        <span>  হতে  গত রোজ বৃহস্পতিবার, ২৮ সেপ্টেম্বর ২০২৩ খ্রিঃ সন্ধ্যা ৬:১৯ ঘটিকার সময়ের মধ্যে </span>
+                    কাপাসিয়া থানাধীন রায়েদ ইউনিয়ন/ওয়ার্ড এর বেলাশী এলাকা থেকে আমার ডকুমেণ্ট
+                                <span>হারিয়ে গিয়েছে </span>
+
+।
+                        <span>নিম্নে আমার ডকুমেণ্ট এর বিস্তারিত বিবরণ ও ঘটনার বিবরণ প্রদান করা হল।</span>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-12" style="font-family:Kalpurush;font-size:15px;">
+<span style="font-weight:bold;color:black;font-size:20px">আমার ডকুমেণ্ট এর বিবরণ:</span><br/>
+<table border="0" width="100%">
+<tr>
+<th>ধরণ</th>
+<th>:</th>
+<td>পাসপোর্ট</td>
+</tr>
+<tr>
+<th>শ্রেণী</th>
+<th>:</th>
+<td>সবুজ</td>
+<th>পাসপোর্ট নং</th>
+<th>:</th>
+<td>BB0932440</td>
+</tr>
+<tr>
+<th>প্রদানের তারিখ</th>
+<th>:</th>
+<td>১৬ মে, ২০১৩</td>
+<th>মেয়াদোর্ত্তীর্নের তারিখ</th>
+<th>:</th>
+<td>১৫ মে, ২০১৮</td>
+</tr>
+<tr>
+<th>প্রদানকারী কর্তৃপক্ষ</th>
+<th>:</th>
+<td>DIP/DHAKA</td>
+<th>জন্ম তারিখ</th>
+<th>:</th>
+<td>৬ জানুয়ারি, ১৯৮৭</td>
+</tr>
+<tr>
+<th>জাতীয়তা</th>
+<th>:</th>
+<td>বাংলাদেশী</td>
+</tr>
+<tr>
+<th>জন্মনিবন্ধন/ এনআইডি নাম্বার</th>
+<th>:</th>
+<td>৬৪৩৭৮৭৩৯৫০</td>
+<th>জরুরী যোগাযোগের মোবাইল</th>
+<th>:</th>
+<td> 01790353404 </td>
+</tr>
+<tr>
+<th colspan="4">
+<h5 class="font-weight-bold" style="color:black;margin-top:20px;margin-bottom:1px;">জরুরী যোগাযোগ :</h5>
+</th>
+</tr>
+<tr>
+<th>নাম</th>
+<th>:</th>
+<td>সামসুল হক</td>
+<th>মোবাইল</th>
+<th>:</th>
+<td>01790353404</td>
+</tr>
+<tr>
+<th>সম্পর্ক</th>
+<th>:</th>
+<td>বাবা</td>
+<th>ঠিকানা</th>
+<th>:</th>
+<td>বেলাশী, রায়েদ, কাপাসিয়া, গাজীপুর,  ঢাকা </td>
+</tr>
+</table>
+</div>
+</div>
+<br/>
+<br/>
+<span style="font-weight:bold;color:black;font-size:20px"><u>ঘটনার বিবরণ :</u></span> <div class="row text-justify">
+<div class="col-12" style="font-family:Kalpurush;font-size:20px;">
+<p style="font-size:20px;margin-bottom:-9px;">
+                         বর্ণিত পাসপোর্টটি রায়েদ বাজারে হতে কাপাসিয়া বাজারে যানবাহন যাতায়াতের সময় নিজের অজান্তে পরে যায়। সম্ভাব্য সকল জায়গায় খোঁজাখুঁজি করা হয়েছে, এখন পর্যন্ত খোঁজাখুঁজি করেও কোনো সন্ধান পাওয়া যায় নাই, খোঁজাখুঁজি অব্যাহত আছে।
+                        এমতাবস্থায়, উপরোক্ত বিষয়টি ভবিষ্যতের জন্য সাধারন ডাইরীভূক্ত করিয়া রাখা একান্ত প্রয়োজন।
+                    </p>
+<p style="font-family:Kalpurush;font-size:20px;margin-top:10px;">
+                        অতএব, উপরোক্ত বিষয়টি আপনার থানায় সাধারন ডাইরীভূক্ত করিতে জনাবের মর্জি হয়।
+                    </p>
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-4" style="font-family: Kalpurush; font-size: 20px; text-align: center;">
+<p style="margin-bottom:-4px;"><img height="100" src="/Upload/GenarelUser\638268647052909409.png" width="150"/></p>
+<p style="margin-bottom:-4px;font-size:20px;font-weight:bold">বর্ণ সাহা</p>
+<p style="margin-bottom:-4px;">মোবাইল-০১৭৮৫৬৪১১৭৮</p>
+<hr class="mb-0 mt-0 bg-dark"/>
+<p>প্রস্তুতকারীর নাম ও স্বাক্ষর</p>
+</div>
+<div class="col-4"></div>
+<div class="col-4" style="font-family:Kalpurush;font-size:20px;text-align:center;">
+<p style="margin-bottom:-4px;">বিনীত</p>
+<p style="margin-bottom:-4px;"><img height="100" src="/" width="150"/></p>
+<p style="margin-bottom:-4px;font-size:20px;font-weight:bold">লোকমান</p>
+<p style="margin-bottom:-4px;">মোবাইল-০১৭৩২৬১৭৯৪৫</p>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+<div class="col-6 mb-4" style="font-family:Kalpurush;font-size:20px;">
+<p style="font-size:18px;margin-bottom:-9px;color:red;">
+<i>
+</i>
+</p>
+</div>
+<div class="col-6"></div>
+<div class="col-4" style="font-family:Kalpurush;font-size:20px;text-align:center;">
+<p style="margin-bottom:-4px;"><img height="50" src="/EmpImages\a2e12b7f.jpeg" width="200"/></p>
+<p style="margin-bottom:-4px;font-size:20px;font-weight:bold">মোঃ ময়েন উদ্দিন</p>
+<p style="margin-bottom:-4px;">বিপি-৭৯০১০২১৪৫১</p>
+<p style="margin-bottom:-4px;">ডিউটি অফিসার</p>
+<p style="margin-bottom:-4px;">কাপাসিয়া থানা</p>
+<p style="margin-bottom:-4px;">গাজীপুর জেলা।</p>
+</div>
+<div class="col-3"></div>
+<div class="col-5" style="font-family:Kalpurush;font-size:20px;text-align:center;">
+<p style="margin-bottom:-4px;">এসআই (নিরস্ত্র) মোঃ তারিকুল ইসলাম বিপি-৭৮৯৪০০১৪৯৭</p>
+<p style="margin-bottom:-4px;">মোবাইল নং-০১৭১৬৬৬৮২৩০</p><br/>
+<p style="margin-bottom:-4px;">এই ডায়েরী সংক্রান্তে প্রয়োজনীয় আইনগত ব্যবস্থা গ্রহণ করুন। </p>
+<p style="margin-bottom:-4px;"><img height="50" src="/EmpImages\637571144829474017.jpeg" width="200"/></p>
+<p style="margin-bottom:-4px;font-size:20px;font-weight:bold">মোঃ আবুবকর মিয়া</p>
+<p style="margin-bottom:-4px;">বিপি-৬৭৯৯০৩৭২৮৬</p>
+<p style="margin-bottom:-4px;">অফিসার ইনচার্জ</p>
+<p style="margin-bottom:-4px;">কাপাসিয়া থানা</p>
+<p style="margin-bottom:-4px;">গাজীপুর জেলা।</p>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<div style="width:100%;text-align:center">
+<u style="font-size:12px;color:red">** এটি একটি কম্পিউটার কর্তৃক প্রস্তুতকৃত দলিল, এতে কোন হস্তকৃত স্বাক্ষর এর প্রয়োজন নেই । **</u>
+</div>
+</div>
+<div class="col-sm-1">
+</div>
+</div>
+</div>
+</div>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="/js/sb-admin-2.min.js"></script>
+<script type="text/javascript">
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+        $(document).ready(function () {
+            var text = '<p class="watermark">Draft</p>';
+            if (6== 1 || 6== 2 || 6== 3 || 6== 7) {
+                $('#reportPage').append(text);
+            }
+        })
+    </script>
+</body>
+</html>
